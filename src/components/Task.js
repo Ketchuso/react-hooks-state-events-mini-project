@@ -1,11 +1,19 @@
-import React from "react";
+import { React, useState } from "react";
 
-function Task() {
+function Task({ task }) {
+  var [deleteButton, setButton] = useState(true)
+
+  function useButton(){
+    setButton(false)
+  }
+
+  if (!deleteButton) return null;
+
   return (
     <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+      <div className="label">Task: {task.text}</div>
+      <div className="text">Category: {task.category}</div>
+      <button onClick={useButton} className="delete">X</button>
     </div>
   );
 }
