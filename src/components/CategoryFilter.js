@@ -1,12 +1,17 @@
 import React from "react";
 
-function CategoryFilter() {
+function CategoryFilter({ setCatFilter }) {  
   return (
     <div className="categories">
       <h5>Category filters</h5>
-      {/* render <button> elements for each category here */}
+      <button onClick={() => setCatFilter('All')}>All</button>
+      <button onClick={() => setCatFilter('Code')}>Code</button>
+      <button onClick={() => setCatFilter('Food')}>Food</button>
+      <button onClick={() => setCatFilter('Money')}>Money</button>
+      <button onClick={() => setCatFilter('Misc')}>Misc</button>
     </div>
   );
 }
 
 export default CategoryFilter;
+
